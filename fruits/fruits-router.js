@@ -1,14 +1,5 @@
 const express = require('express');
-const knex = require('knex');
-
-const db = knex({
-  client: 'sqlite3',
-  connection: {
-    filename: './data/produce.db3'
-  },
-  useNullAsDefault: true
-});
-
+const db = require('../data/connection.js')
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -17,7 +8,7 @@ router.get('/', (req, res) => {
     res.json(fruits); 
   })
   .catch (err => {
-    res.status(500).json({ message: 'Failed to retrieve fruits' });
+    res.status(500).json({ message: 'Failed to retrieve fruits', error: err.message });
   });
 });
 

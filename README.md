@@ -16,3 +16,14 @@ Guided project **DB II** Module.
 - [ ] type `npm run server` to start the API.
 
 Please follow along as the instructor explores schema design with this API.
+
+**_ STEPS _**
+Connect knex to ./data/produce.db3 dababase file
+
+- npm i -g knex
+- knex init -> creates the knexfile.js
+- modify the development configuration to point to './data/produce.db3'
+- remove knex code at top of 'fruites-router.js'
+- create a 'connection.js' file that uses 'knexfile.js' to pick the 'development' configuration object.
+- use the 'connection' file inside 'fruits-router' (call it 'db') as the means to access the database.
+- run the server and do a GET to 'localhost:5000/api/fruits'

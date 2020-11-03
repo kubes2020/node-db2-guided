@@ -5,17 +5,14 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      filename: './data/produce.db3' //change path to match your data location from root
+      filename: './data/veggies.db3' //change path to match your data location from root
     },
-    useNullAsDefault: true // needed only for SQLite
+    useNullAsDefault: true, // needed only for SQLite
+    migrations: {
+      directory: './data/migrations' //from root
+    },
   },
 
-  testing: {
-    client: "sqlite3",
-    connection: {
-      filename: "./data/testing.db3",
-    }
-  },
 
   staging: {
     client: 'postgresql',

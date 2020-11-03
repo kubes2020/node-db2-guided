@@ -27,3 +27,13 @@ Connect knex to ./data/produce.db3 dababase file
 - create a 'connection.js' file that uses 'knexfile.js' to pick the 'development' configuration object.
 - use the 'connection' file inside 'fruits-router' (call it 'db') as the means to access the database.
 - run the server and do a GET to 'localhost:5000/api/fruits'
+
+** MANTRAS **
+
+- every table MUST have a Primary Key.
+- every change to the database schema (structure) NEEDS a new migration
+
+**Migrations**
+
+- create a migration: 'knex migrate:make <migration_name>
+- run all pending migrations: 'knex migrate:latest'
